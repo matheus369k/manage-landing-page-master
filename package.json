@@ -1,0 +1,11 @@
+{
+  "name": "manage-landing-page-master",
+  "version": "1.0.0",
+  "description": "Project have with objective updateing of skils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "matheus",
+  "license": "MIT"
+}
