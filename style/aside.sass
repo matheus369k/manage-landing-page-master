@@ -1,0 +1,109 @@
+@use '_mixins'
+
+@use '_variables'
+
+@import 'animation'
+
+.aside_container
+    display: flex
+    flex-direction: column
+
+    width: 100vw
+
+    margin-top: 100px
+
+    &_coments
+        display: flex
+        flex-direction: column
+
+        animation: endent-contend-loading 1s ease-in-out
+
+        overflow: scroll
+
+        row-gap: 50px
+
+        &::-webkit-scrollbar
+            opacity: 0
+
+        &_title
+            font-size: 2.7em
+            font-weight: 700
+
+            color: variables.$prominence-color-darkblue
+
+            text-align: center
+
+        &_list
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+            column-gap: 3.3%
+
+            &_container
+                min-width: 30%
+
+                display: flex
+                flex-direction: column
+                align-items: center
+
+                row-gap: 20px
+
+                &_img
+                    width: 80px
+                    height: auto
+
+                &_title
+                    color: variables.$prominence-color-darkblue
+
+                &_text
+                    text-align: center
+
+        &_btn
+            @include mixins.btn_getStart ()
+
+            margin: 0 auto
+
+            transition: 1s
+
+            &:hover
+                background-color: variables.$prominence-color-orangered-hover
+
+                transform: scale(1.05)
+
+    &_msg_finish
+        height: 200px
+        width: 100%
+
+        @include mixins.bg_img()
+        background-image: url(../images/bg-simplify-section-desktop.svg)
+        background-color: variables.$prominence-color-orangered
+
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        color: variables.$color-4
+
+        animation: loading 1s ease-in-out
+
+        &_title
+            font-size: 2.4em
+            width: max-content
+
+            position: relative
+            left: 10%
+
+        &_btn
+            @include mixins.btn_getStart ()
+            background-color: variables.$color-4
+            color: variables.$prominence-color-orangered
+
+            margin-right: 10%
+
+            transition: 1s
+
+            &:hover
+                color: variables.$prominence-color-orangered-hover
+
+                transform: scale(1.05)

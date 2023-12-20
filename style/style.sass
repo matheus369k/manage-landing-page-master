@@ -1,0 +1,41 @@
+@use '_mixins'
+
+@use '_variables'
+
+@import 'animation'
+
+@import 'reset'
+
+@import 'fonts'
+
+@import 'header'
+
+@import 'main'
+
+@import 'aside'
+
+@import 'footer'
+
+html
+    width: 100vw
+    min-height: 100vh
+    height: 100%
+
+    overflow-x: hidden
+
+    font-family: 'Be Vietnam Pro', sans-serif
+
+    body
+        @include mixins.bg_img()
+        background-attachment: fixed
+        background-position: center center
+        background-image: url(../images/bg-simplify-section-desktop.svg)
+
+        animation: loading 2s ease-out
+
+        .text
+            color: variables.$color-1
+
+            line-height: 24px
+
+            letter-spacing: 1px

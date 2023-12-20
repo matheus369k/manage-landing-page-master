@@ -1,0 +1,73 @@
+@use '_mixins'
+
+@use '_variables'
+
+@import 'animation'
+
+.header_container
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    max-width: variables.$max-width
+    min-width: variables.$min-width
+
+    height: 150px
+
+    padding: 0 50px
+
+    &_logo
+        animation: grow-loading 1s ease-in-out
+
+        &:hover
+            transition: .7s
+            transform: scale(1.05)
+
+    &_navbar
+        display: flex
+        column-gap: 25px
+
+        animation: grow-loading 1s ease-in-out
+
+        a
+            color: variables.$color-2
+
+            font-size: 1.2em
+            font-weight: 500
+
+            padding-bottom: 5px
+
+            position: relative
+
+            &:hover
+                color: variables.$prominence-color-orangered
+
+            &::before
+                content: ""
+
+                height: 3px
+                width: 0%
+
+                background-color: black
+
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+
+                transition: .4s
+
+            &:hover::before
+                width: 100%
+
+    &_btn
+        @include mixins.btn_getStart ()
+
+        animation: grow-loading 1s ease-in-out
+
+        transition: 1s
+
+        &:hover
+            background-color: variables.$prominence-color-orangered-hover
+
+            transform: scale(1.05)
