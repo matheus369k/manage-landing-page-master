@@ -12,16 +12,57 @@
     max-width: variables.$max-width
     min-width: variables.$min-width
 
+    width: 100%
+
     height: 150px
 
     padding: 0 50px
 
+    @include mixins.redimention_568()
+        padding: 0 25px
+
     &_logo
         animation: grow-loading 1s ease-in-out
+
+        @include mixins.redimention_568()
+            height: 22px
 
         &:hover
             transition: .7s
             transform: scale(1.05)
+
+    &_menu
+        display: none
+
+        height: 30px
+
+        animation: grow-loading 1s ease-in-out
+
+        cursor: pointer
+
+        z-index: 2
+
+        @include mixins.redimention_993()
+            display: flex
+
+    &_block
+        display: none
+
+        @include mixins.redimention_993()
+            background-image: linear-gradient(-180deg, #00000000,#00000021 ,#00000032 , #00000053)
+
+            display: flex
+
+            position: fixed
+            top: 0
+            left: 0
+
+            width: 100vw
+            height: 100vh
+
+            overflow: hidden
+
+            z-index: 1
 
     &_navbar
         display: flex
@@ -29,10 +70,36 @@
 
         animation: grow-loading 1s ease-in-out
 
+        @include mixins.redimention_993()
+            background-color: white
+
+            opacity: 0
+
+            animation: grow-loading none
+
+            width: 80%
+            height: 400px
+
+            flex-direction: column
+            align-items: center
+            justify-content: center
+
+            row-gap: 30px
+
+            position: absolute
+            top: 100px
+            left: 50%
+
+            transform: translateX(-50%)
+
+            z-index: 2
+        
+            
+
         a
             color: variables.$color-2
 
-            font-size: 1.2em
+            font-size: 1em
             font-weight: 500
 
             padding-bottom: 5px
@@ -40,7 +107,7 @@
             position: relative
 
             &:hover
-                color: variables.$prominence-color-orangered
+                color: variables.$color-1
 
             &::before
                 content: ""
@@ -66,6 +133,9 @@
         animation: grow-loading 1s ease-in-out
 
         transition: 1s
+
+        @include mixins.redimention_993()
+            display: none
 
         &:hover
             background-color: variables.$prominence-color-orangered-hover

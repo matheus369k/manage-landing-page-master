@@ -12,6 +12,8 @@
 
   <link rel="stylesheet" href="./style/index.css">
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
   <title>Frontend Mentor | Manage landing page</title>
 
 </head>
@@ -22,7 +24,9 @@
 
     <img class="header_container_logo" src="./images/logo.svg" alt="Logo">
 
-    <nav class="header_container_navbar">
+    <img id="menu" class="header_container_menu"  src="./images/icon-hamburger.svg" alt="menu">
+
+    <nav id="navbar" class="header_container_navbar">
       <a href="">Pricing</a>
       <a href="">Product</a>
       <a href="">About Us</a>
@@ -36,6 +40,9 @@
 
 
   <main class="main_container">
+
+    <img class="main_container_status_img" src="./images/illustration-intro.svg" alt="imagem de representative inicial">
+
 
     <section class="main_container_apresentation">
 
@@ -62,8 +69,6 @@
       </p>
 
     </section>
-
-    <img class="main_container_status_img" src="./images/illustration-intro.svg" alt="imagem de representative inicial">
 
 
     <section class="main_container_pass">
@@ -126,8 +131,7 @@
 
       <h2 class="aside_container_coments_title">What they’ve said</h2>
 
-
-      <ul class="aside_container_coments_list">
+      <ul id="coments" class="aside_container_coments_list">
 
         <li class="aside_container_coments_list_container">
 
@@ -207,11 +211,11 @@
 
   <footer class="footer_container">
 
-    <form class="footer_container_form">
+    <form id="formfooter" class="footer_container_form">
 
-      <input class="footer_container_form_input" type="text" id="invitemsg" placeholder="Updates in your inbox…">
+      <input autocomplete="off" class="footer_container_form_input" type="email" id="invitemsg" placeholder="Updates in your inbox…">
 
-      <button class="footer_container_form_btn">Go</button>
+      <button id="btnfooterform" class="footer_container_form_btn">Go</button>
 
     </form>
 
@@ -302,6 +306,8 @@
     <p class="footer_container_text_msg">Copyright 2020. All Rights Reserved</p>
 
   </footer>
+
+  <script src="./js/index.js"></script>
 
 </body>
 

@@ -16,14 +16,16 @@
         display: flex
         flex-direction: column
 
-        animation: endent-contend-loading 1s ease-in-out
+        max-width: variables.$max-width
+        min-width: variables.$min-width
 
-        overflow: scroll
+        margin: 0 auto
 
         row-gap: 50px
 
-        &::-webkit-scrollbar
-            opacity: 0
+        padding: 10px
+
+        margin-bottom: 25px
 
         &_title
             font-size: 2.7em
@@ -31,23 +33,45 @@
 
             color: variables.$prominence-color-darkblue
 
+            animation: endent-contend-loading 1s ease-in-out
+
             text-align: center
+
+            @include mixins.redimention_768()
+                font-size: 2em
+
+            @include mixins.redimention_568()
+                font-size: 1.5em
 
         &_list
             display: flex
             justify-content: space-between
             align-items: center
+            
+            animation: endent-contend-loading 1s ease-in-out
 
-            column-gap: 3.3%
+            overflow: hidden
+
+            column-gap: 20px
 
             &_container
-                min-width: 30%
+                min-width: 32%
+
+                position: relative
 
                 display: flex
                 flex-direction: column
                 align-items: center
 
                 row-gap: 20px
+
+                @include mixins.redimention_993()
+                    min-width: 48%
+
+                @include mixins.redimention_768
+                    min-width: 98%
+
+                        
 
                 &_img
                     width: 80px
@@ -87,12 +111,28 @@
 
         animation: loading 1s ease-in-out
 
+        @include mixins.redimention_568
+            flex-direction: column
+
+            padding: 25px
+        
+
         &_title
             font-size: 2.4em
             width: max-content
 
             position: relative
             left: 10%
+
+            @include mixins.redimention_768()
+                font-size: 2em
+
+                left: 20px
+
+            @include mixins.redimention_568()
+                font-size: 1.5em
+
+                left: 0px
 
         &_btn
             @include mixins.btn_getStart ()
@@ -102,6 +142,10 @@
             margin-right: 10%
 
             transition: 1s
+
+            @include mixins.redimention_768()
+
+                margin-right: 20px
 
             &:hover
                 color: variables.$prominence-color-orangered-hover

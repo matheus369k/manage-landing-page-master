@@ -25,13 +25,25 @@ html
 
     font-family: 'Be Vietnam Pro', sans-serif
 
-    body
-        @include mixins.bg_img()
-        background-attachment: fixed
-        background-position: center center
-        background-image: url(../images/bg-simplify-section-desktop.svg)
+    @include mixins.bg_img()
+    background-size: 100vw
+    background-position-x: 40vw
+    background-position-y: 110%
+    background-image: url(../images/bg-tablet-pattern.svg)
 
+    @include mixins.redimention_993()
+        background-position-x: 25vw
+        background-position-y: -800%
+        
+
+    body
         animation: loading 2s ease-out
+
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        scroll-behavior: smooth
 
         .text
             color: variables.$color-1
