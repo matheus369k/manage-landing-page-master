@@ -2,11 +2,11 @@
 
 ## 📄Description 
 
-- uso do metodo clean code.
+- uso do metodo __clean code__.
 
-- aderido o uso de tags semanticas.
+- aderido o uso de __tags semanticas__.
 
-- O Projeto e uma Unica pagina, tendo como foco simular as funções e a aparencia de uma pagina web.
+- O Projeto e uma unica pagina, tendo como foco simular as funções e a aparencia de uma pagina web.
 
 ## 🧰Soft Skils
 
@@ -17,32 +17,32 @@
 
 ## ⚒️Build
 
-- O objetivo de desenvolvimento foi aprimoramento das habilades com o sass, jquery, o uso de tags semanticas e o aprimoramento da logica de progamação.
+- O objetivo de desenvolvimento foi aprimoramento das habilades com o __sass__, __jquery__, o uso de __tags semanticas__ e o aprimoramento da logica de progamação.
 
 - O tempo de desenvolvimento do projeto foi de mais ou menos 18h.
 
-- Fora utilizado animações com @Keyframes e animation para suavilizar a troca de informações e os loading.
+- Fora utilizado animações com __@keyframes__ e __animation__ para suavilizar a troca de informações e os loading.
 
-- A utilização de mixins para facilitar a criações de estilos que se repentem na pagina.
+- A utilização de __mixins__ para facilitar a criações de estilos que se repentem na pagina.
 
-- A adenção das variavel no estilo tem como objetivo facilitar possiveis modificações no projeto.
+- A adenção das __variavel__ no estilo tem como objetivo facilitar possiveis modificações no projeto.
 
-- Os arquivos .sass foram divididos buscando separar as funções de estilização, para facilitar possiveis modificações.
+- Os arquivos __.sass__ foram divididos buscando separar as funções de estilização, para facilitar possiveis modificações.
 
-- O projeto e responsivo para todos os dispositivos.
+- O projeto e __responsivo__ para todos os dispositivos.
 
-- Na adaptação do projeto fora utilizado mediaquerys em união com o mixins para facilir a adaptação dos elementos.
+- Na adaptação do projeto fora utilizado __mediaquerys__ em união com o __mixins__ para facilir a adaptação dos elementos.
 
-- Em relação a interações e verificações fora utilizado javaScript e Jquery.
+- Em relação a interações e verificações fora utilizado __javaScript__ e sua liby __Jquery__.
 
-- Na criação do menu fora utlizado as funções slideUP() e slideDown() para escondelo e mostra-lo.
+- Na criação do menu fora utlizado as funções __slideUP()__ e __slideDown()__ para escondelo e mostra-lo.
 
-- Na parte dos dos da automação da troca de mensagem exibidas abaixo fora usado funções de controle de tempo como setInterval(), funções condicionais com if e else para limitar as opções, a animation() para suaviliar as trocas e a hide() e show() para esconder e mostrar os elementos.
+- Na parte dos dos da automação da troca de mensagem exibidas abaixo fora usado funções de controle de tempo como __setInterval()__, funções __condicionais__ com __if__ e __else__ para limitar as opções, a __animation()__ para suaviliar as trocas e a __hide()__ e __show()__ para esconder e mostrar os elementos.
 
-- Fora feito uma verificação de email para limitar oque se podia digitar e mostrando mensagem de acordo com a verificação.
+- Fora feito uma __verificação de email__ para limitar oque se podia digitar e mostrando mensagem de acordo com o recomendade.
 
 ## ➕More Information
-Veja um o gif abaixo que mostra o site por dento ou acesse o Aqui 🔗link - https://matheus369k.github.io/manage-landing-page-master/
+Veja um o __gif abaixo__ que mostra o site por dento ou acesse o Aqui 🔗[__Deploy__](https://matheus369k.github.io/manage-landing-page-master/)
 
 <div align="center">
 
