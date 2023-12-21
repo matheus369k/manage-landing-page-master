@@ -1,5 +1,7 @@
 const navbar = $('#navbar');
-let cont = 1;
+var cont = 0;
+
+var activenexpre = true;
 
 $('#menu').click((e) => {
     let src = $(e.target);
@@ -27,7 +29,29 @@ $('#menu').click((e) => {
 
 });
 
+$(window).resize(()=>{
+    cont = -1;
+    
+    activenexpre = false;
+
+    slide(3);
+});
+
 setInterval(() => {
+    if (Boolean(activenexpre)) {
+
+        slide(3);
+
+
+    } else {
+
+        setInterval(() => { activenexpre = true; }, 20000);
+
+    };
+
+}, 16000);
+
+function slide(btnnexpprev) {
 
     var sizeWindows = 2;
 
@@ -43,50 +67,72 @@ setInterval(() => {
 
     } else {
 
-        porcentMove = 34;
+        porcentMove = 33;
 
         sizeWindows = 0;
     };
 
-    slide(sizeWindows, porcentMove);
-
-}, 6000);
-
-function slide(sizeWindows, porcentMove) {
-
-    if (parseInt($('#coments').children().css('right')) > (parseInt(window.innerWidth) * parseInt(sizeWindows))) {
+    if (parseInt($('#coments').children().css('right')) > (parseInt(window.innerWidth) * parseInt(sizeWindows)) && parseInt(btnnexpprev) === 3) {
 
         $('#coments').children().animate({ right: 0 }, 1000);
 
-        cont = 0;
+        cont = -1;
     };
 
-    $('#coments').children().animate({ right: cont * porcentMove + '%' }, { duration: 1000 });
+    if (parseInt(btnnexpprev) === 0 || parseInt(btnnexpprev) === 3) {
 
-    cont++
+        cont++;
+
+    } else if (parseInt(btnnexpprev) === 1) {
+
+        cont--;
+
+    };
+
+    if (window.innerWidth < 768 && cont > 3) {
+
+        cont = 3
+
+    } else if (window.innerWidth > 768 && cont > 2) {
+
+        cont = 2
+
+    } else if  (window.innerWidth > 993 && cont > 1){
+
+        cont = 1
+
+    } else if (cont < 0) {
+
+        cont = 0
+
+    }
+
+    $('#coments').children().animate({ right: cont * parseInt(porcentMove) + '%' }, { duration: 1000 });
+
+    switchbtnnextprev(cont, sizeWindows);
 
 };
 
-$('#invitemsg').change((e)=>{ 
+$('#invitemsg').change((e) => {
 
     removemsgerror(e);
 
 })
 
-$('#btnfooterform').click(function(e){
+$('#btnfooterform').click(function (e) {
 
     e.preventDefault()
 
     const valformfooter = $('#invitemsg').val()
 
-    if (valformfooter.length < 10){
+    if (valformfooter.length < 10) {
 
         AddmsgError();
 
         return
     }
 
-    if ( valformfooter.slice(valformfooter.length-10, valformfooter.length) !== '@gmail.com') {
+    if (valformfooter.slice(valformfooter.length - 10, valformfooter.length) !== '@gmail.com') {
 
         AddmsgError();
 
@@ -102,12 +148,73 @@ $('#btnfooterform').click(function(e){
 
             return
         }
-        
+
     }
 
     removemsgerror($('#invitemsg'));
 
     $('#invitemsg').val('');
+
+})
+
+function switchbtnnextprev(contnew, sizeWindows) {
+    if (parseInt(contnew) === 0) {
+
+        $('#nextpreright').hide(500);
+
+    } else {
+
+        $('#nextpreright').show(500);
+
+    }
+
+    if ((parseInt(sizeWindows) === 0 && contnew === 1) || (parseInt(sizeWindows) === 2 && contnew === 3)) {
+
+        $('#nextpreleft').hide(500);
+
+    } else {
+
+        $('#nextpreleft').show(500);
+
+    }
+}
+
+$('#btnsnextprev').click((e) => {
+
+    if (e.target.tagName === 'NAV') {
+
+        return
+
+    }
+
+    activenexpre = false;
+
+    if (e.target.tagName === 'BUTTON') {
+
+        if (e.target.id === 'nextpreleft') {
+
+            slide(0)
+
+        } else if (e.target.id === 'nextpreright') {
+
+            slide(1)
+
+        }
+
+        return
+
+    }
+
+
+    if ($(e.target).parents('button')[0].id === 'nextpreleft') {
+
+        slide(0)
+
+    } else if ($(e.target).parents('button')[0].id === 'nextpreright') {
+
+        slide(1)
+
+    }
 
 })
 
