@@ -492,6 +492,7 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  background-color: transparent;
   cursor: pointer;
   opacity: 0.4;
   z-index: 3;
@@ -500,6 +501,7 @@
 .aside_container_coments_btnnexpre_btn svg > path {
   color: hsl(233, 12%, 13%);
   font-size: 2em;
+  background-color: transparent;
 }
 .aside_container_coments_btnnexpre_btn:hover {
   transform: scale(1.1);
